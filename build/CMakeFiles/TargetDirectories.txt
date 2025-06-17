@@ -1,0 +1,3 @@
+/home/jane/oop/assignment/25-assign7/build/CMakeFiles/oop_game.dir
+/home/jane/oop/assignment/25-assign7/build/CMakeFiles/edit_cache.dir
+/home/jane/oop/assignment/25-assign7/build/CMakeFiles/rebuild_cache.dir
