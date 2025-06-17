@@ -5,7 +5,7 @@
 #include "Controller.h"
 #include "Map.h"
 
-int main() {
+int main(){
     int width = 60, height = 10;
     std::vector<GameObject*> allObjects;
 
@@ -23,10 +23,5 @@ int main() {
     Controller controller(player, &view, &map);
 
     controller.run();
-
-    // 清除所有物件（手動 delete）
-    // for (GameObject* obj : allObjects) {
-    //     delete obj;
-    // }
     return 0;
 }

@@ -22,29 +22,28 @@ bool Enemy::canBeEaten() const {
     return false;
 }
 
-void Enemy::moveTowardPlayer(int targetX, int targetY, const Map* map) {
+void Enemy::moveTowardPlayer(int targetX, int targetY, const Map* map){
     int dx = 0, dy = 0;
 
-    if (targetX != getX()) {
+    if(targetX != getX()){
         dx = (targetX > getX()) ? 1 : -1;
         int newX = getX() + dx;
         int newY = getY();
 
-        if (!map->isBlocked(newX, newY)) {
+        if(!map->isBlocked(newX, newY)){
             setPosition(newX, newY);
             return;
         }
     }
 
     // 垂直移動
-    if (targetY != getY()) {
+    if(targetY != getY()){
         dy = (targetY > getY()) ? 1 : -1;
         int newX = getX();
         int newY = getY() + dy;
 
-        if (!map->isBlocked(newX, newY)) {
+        if(!map->isBlocked(newX, newY)){
             setPosition(newX, newY);
         }
     }
-    // 如果兩邊都擋住，就不移動
 }

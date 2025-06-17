@@ -6,8 +6,6 @@
 
 using namespace std;
 
-// constexpr int MAX_WIDTH = 60;
-// constexpr int MAX_HEIGHT = 10;
 
 class View{
 private:

@@ -11,7 +11,7 @@
 Controller::Controller(Player* p, View* v, Map* m)
     : player(p), view(v), map(m), direction('w'), running(true), objects(v->getObjects()){}
 
-char Controller::getInputIfAny() {
+char Controller::getInputIfAny(){
     struct termios oldt, newt;
     char c = 0;
     int bytesWaiting;
@@ -55,18 +55,17 @@ void Controller::run(){
 
         map->checkCollision(player, prevX, prevY);
 
-        for (auto obj : view->getObjects()) {
+        for(auto obj : view->getObjects()){
             Enemy* enemy = dynamic_cast<Enemy*>(obj);
-            if (enemy) {
+            if(enemy){
                 enemy->moveTowardPlayer(player->getX(), player->getY(), map);
-                map->checkCollision(enemy, -1, -1); // we ignore prevX, prevY for enemy
             }
         }
 
         view->render();
         std::this_thread::sleep_for(std::chrono::milliseconds(500));
 
-        if (!map->hasRemainingTreasure()) {
+        if(!map->hasRemainingTreasure()){
             std::cout << "You win!\n";
             break;
         }
